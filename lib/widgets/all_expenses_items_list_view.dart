@@ -3,28 +3,36 @@ import 'package:responsive_dashboard/models/all_expenses_item_model.dart';
 import 'package:responsive_dashboard/utils/app_images.dart';
 import 'package:responsive_dashboard/widgets/all_expenses_item.dart';
 
-class AllExpensesItemListView extends StatelessWidget {
+class AllExpensesItemListView extends StatefulWidget {
   const AllExpensesItemListView({super.key});
-  static const item = [
-    AllExpensesItemModel(
+
+  @override
+  State<AllExpensesItemListView> createState() =>
+      _AllExpensesItemListViewState();
+}
+
+class _AllExpensesItemListViewState extends State<AllExpensesItemListView> {
+  final item = [
+    const AllExpensesItemModel(
       image: Assets.imagesBalance,
       title: "Balance",
       date: "April 2022",
       price: r"$20.129",
     ),
-    AllExpensesItemModel(
+    const AllExpensesItemModel(
       image: Assets.imagesIncome,
       title: "Income",
       date: "April 2022",
       price: r"$20.129",
     ),
-    AllExpensesItemModel(
+    const AllExpensesItemModel(
       image: Assets.imagesExpenses,
       title: "Expenses",
       date: "April 2022",
       price: r"$20.129",
     )
   ];
+  int selectedindex = 0;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -33,19 +41,39 @@ class AllExpensesItemListView extends StatelessWidget {
       var item = e.value;
       if (index == 1) {
         return Expanded(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: AllExpensesItem(
-              itemmodel: item,
+          child: GestureDetector(
+            onTap: (){
+              updateIndex(index);
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: AllExpensesItem(
+                itemmodel: item,
+                iSelected: selectedindex == index,
+              ),
             ),
           ),
         );
       } else {
         return Expanded(
+          
+          child: GestureDetector(
+             onTap: (){
+              updateIndex(index);
+            },
             child: AllExpensesItem(
-          itemmodel: item,
-        ));
+            itemmodel: item,
+            iSelected: selectedindex == index,
+          ),
+          ),
+        );
       }
     }).toList());
+  }
+  
+  void updateIndex(int index) {
+    setState(() {
+     selectedindex = index; 
+    });
   }
 }

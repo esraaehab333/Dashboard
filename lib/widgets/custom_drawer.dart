@@ -1,28 +1,53 @@
 import 'package:flutter/material.dart';
 import '../widgets/user_info.dart';
 import '../utils/app_images.dart';
+import '../widgets/drawer_item_list_view.dart';
+import '../widgets/active_and_inactive_item.dart';
 import '../models/drawer_item_model.dart';
-import '../widgets/drawer_item.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
 
-  
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      child: const Column(
-        children: [
-          UserInfoListTile(
-            img: Assets.imagesAvatar3,
-            title: "Lekan Okeowo",
-            subTitle: 'demo@gmail.com',
+      child: const CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: UserInfoListTile(
+              img: Assets.imagesAvatar3,
+              title: "Lekan Okeowo",
+              subTitle: 'demo@gmail.com',
+            ),
           ),
-          const SizedBox(
-            height: 8,
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 8,
+            ),
           ),
           DrawerItemListView(),
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Column(
+              children: [
+                Expanded(child: SizedBox(
+                  height: 20,
+                )),
+                InActiveDrawerItem(
+                  drawerItemModel: DrawerItemModel(
+                      image: Assets.imagesSetting, title: "Settings"),
+                ),
+                InActiveDrawerItem(
+                  drawerItemModel: DrawerItemModel(
+                      image: Assets.imagesLogout, title: "Log out Account"),
+                ),
+                SizedBox(
+                  height: 48,
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );

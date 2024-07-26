@@ -86,7 +86,7 @@ class ActiveSelectedItem extends StatelessWidget {
             image: itemmodel.image,
           ),
           const SizedBox(
-            height: 34,
+            height: 20,
           ),
           Text(
             itemmodel.title,
@@ -104,7 +104,7 @@ class ActiveSelectedItem extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 16,
+            height: 12,
           ),
           Text(
             itemmodel.price,

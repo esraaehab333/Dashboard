@@ -13,6 +13,10 @@ class Assets {
   /// assets/images/avatar3.svg
   static const String imagesAvatar3 = "assets/images/avatar3.svg";
 
+  /// Assets for imagesAvatar4
+  /// assets/images/avatar4.svg
+  static const String imagesAvatar4 = "assets/images/avatar4.svg";
+
   /// Assets for imagesBalance
   /// assets/images/balance.svg
   static const String imagesBalance = "assets/images/balance.svg";

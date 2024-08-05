@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_dashboard/widgets/all_expenses_and_quick_invoice_section.dart';
+import 'package:responsive_dashboard/widgets/expenses/all_expenses_and_quick_invoice_section.dart';
+import 'package:responsive_dashboard/widgets/income/income_section.dart';
 import 'package:responsive_dashboard/widgets/my_card_and_transaction_history.dart';
-import 'package:responsive_dashboard/widgets/my_card_section.dart';
-import 'package:responsive_dashboard/widgets/transaction_history.dart';
 import '../widgets/custom_drawer.dart';
 
 class DashboardDektopLayout extends StatelessWidget {
@@ -19,13 +18,42 @@ class DashboardDektopLayout extends StatelessWidget {
           width: 32,
         ),
         Expanded(
-          flex: 2,
-          child: AllExpensesAndQuickInvoiceSection(),
-        ),
-        SizedBox(width: 24,),
-        Expanded(
-          child: MyCardAndTransactionHistory(),
-        ),
+            flex: 3,
+            child: CustomScrollView(
+              slivers: [
+                SliverFillRemaining(
+                  hasScrollBody: false,
+                  child: Row(
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 40),
+                          child: AllExpensesAndQuickInvoiceSection(),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 24,
+                      ),
+                      Expanded(
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 40,
+                            ),
+                            MyCardAndTransactionHistory(),
+                            SizedBox(
+                              height: 24,
+                            ),
+                            Expanded(child: IncomeSection()),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ))
       ],
     );
   }

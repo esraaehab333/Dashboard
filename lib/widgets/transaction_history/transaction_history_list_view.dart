@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dashboard/models/transaction_model.dart';
-import 'package:responsive_dashboard/widgets/transaction_item.dart';
+import 'package:responsive_dashboard/widgets/transaction/transaction_item.dart';
 
 class TransactionHistoryListView extends StatelessWidget {
   const TransactionHistoryListView({super.key});
@@ -25,11 +25,8 @@ class TransactionHistoryListView extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: items.length,
-        shrinkWrap: true,
-        itemBuilder: (context, Index) {
-          return TransactionItem(transactionModel: items[Index]);
-        });
+    return Column(
+      children: items.map((e)=>TransactionItem(transactionModel: e)).toList(),
+    );
   }
 }

@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dashboard/models/all_expenses_item_model.dart';
 import 'package:responsive_dashboard/utils/app_style.dart';
-import 'package:responsive_dashboard/widgets/all_expenses_item_header.dart';
+import 'package:responsive_dashboard/widgets/expenses/all_expenses_item_header.dart';
 
 class InActiveSelectedItem extends StatelessWidget {
   const InActiveSelectedItem({
@@ -35,23 +35,32 @@ class InActiveSelectedItem extends StatelessWidget {
           const SizedBox(
             height: 34,
           ),
-          Text(
-            itemmodel.title,
-            style: AppStyle.styleMeduinm16,
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemmodel.title,
+              style: AppStyle.styleMeduinm16(context),
+            ),
           ),
           const SizedBox(
             height: 8,
           ),
-          Text(
-            itemmodel.date,
-            style: AppStyle.stylesRegular14,
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemmodel.date,
+              style: AppStyle.styleRegular14(context),
+            ),
           ),
           const SizedBox(
             height: 16,
           ),
-          Text(
-            itemmodel.price,
-            style: AppStyle.stylesemiBold24,
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemmodel.price,
+              style: AppStyle.styleSemiBold24(context),
+            ),
           )
         ],
       ),
@@ -75,6 +84,10 @@ class ActiveSelectedItem extends StatelessWidget {
         color: const Color(0xff4db7f2),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
+           side: const BorderSide(
+            width: 1,
+            color:const Color(0xff4db7f2),
+          ),
         ),
       ),
       child: Column(
@@ -88,28 +101,37 @@ class ActiveSelectedItem extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Text(
-            itemmodel.title,
-            style: AppStyle.styleMeduinm16.copyWith(
-              color: Colors.white
+          FittedBox(
+          fit: BoxFit.scaleDown,
+            child: Text(
+              itemmodel.title,
+              style: AppStyle.styleMeduinm16(context).copyWith(
+                color: Colors.white
+              ),
             ),
           ),
           const SizedBox(
             height: 8,
           ),
-          Text(
-            itemmodel.date,
-            style: AppStyle.stylesRegular14.copyWith(
-              color: const Color(0xfffafafa)
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemmodel.date,
+              style: AppStyle.styleRegular14(context).copyWith(
+                color: const Color(0xfffafafa)
+              ),
             ),
           ),
           const SizedBox(
             height: 12,
           ),
-          Text(
-            itemmodel.price,
-            style: AppStyle.stylesemiBold24.copyWith(
-              color: Colors.white
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemmodel.price,
+              style: AppStyle.styleSemiBold24(context).copyWith(
+                color: Colors.white
+              ),
             ),
           )
         ],

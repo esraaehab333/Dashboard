@@ -8,14 +8,14 @@ class AllExpensesHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
         Text(
           "All Expenses",
-          style: AppStyle.stylesemiBold20,
+          style: AppStyle.styleSemiBold20(context),
         ),
-        Expanded(child: SizedBox()),
-        RangeOption(),
+        const Expanded(child: SizedBox()),
+        const RangeOption(),
       ],
     );
   }

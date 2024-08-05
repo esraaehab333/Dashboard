@@ -21,14 +21,14 @@ class RangeOption extends StatelessWidget {
           ),
         ),
       ),
-      child: const Row(
+      child:  Row(
         children: [
           Text(
             "Monthly",
-            style: AppStyle.styleMeduinm16,
+            style: AppStyle.styleMeduinm16(context),
           ),
-          SizedBox(width: 18,),
-          Icon(
+          const SizedBox(width: 18,),
+          const Icon(
             Icons.arrow_drop_down,
             color: Color(0xff064061),
           ),

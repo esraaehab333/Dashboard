@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_dashboard/widgets/custom_drawer.dart';
+import 'package:responsive_dashboard/widgets/drawer/custom_drawer.dart';
 import 'package:responsive_dashboard/views/dashboard_mobile_layout.dart';
 
 class DashboardTabletLayout extends StatelessWidget {

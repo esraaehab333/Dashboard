@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dashboard/utils/size_config.dart';
 import 'package:responsive_dashboard/views/dashboard_desktop_layout.dart';
-import 'package:responsive_dashboard/widgets/adaptive_layout_widget.dart';
-import 'package:responsive_dashboard/widgets/custom_drawer.dart';
+import 'package:responsive_dashboard/views/adaptive_layout_widget.dart';
+import 'package:responsive_dashboard/widgets/drawer/custom_drawer.dart';
 import 'package:responsive_dashboard/views/dashboard_mobile_layout.dart';
 import 'package:responsive_dashboard/views/dashboard_tablet_layout.dart';
 

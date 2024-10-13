@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:expandable_page_view/expandable_page_view.dart';
-import 'package:responsive_dashboard/widgets/my_card.dart';
+import 'package:responsive_dashboard/widgets/card/my_card.dart';
 
 class MyCardPageView extends StatelessWidget {
   const MyCardPageView({super.key, required this.pageController});

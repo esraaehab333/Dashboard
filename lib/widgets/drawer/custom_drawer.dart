@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dashboard/models/user_info_model.dart';
-import '../widgets/user_info.dart';
-import '../utils/app_images.dart';
-import '../widgets/drawer_item_list_view.dart';
-import '../widgets/active_and_inactive_item.dart';
-import '../models/drawer_item_model.dart';
+import '../user_info.dart';
+import '../../utils/app_images.dart';
+import 'drawer_item_list_view.dart';
+import 'active_and_inactive_item.dart';
+import '../../models/drawer_item_model.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});

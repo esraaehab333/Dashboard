@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:responsive_dashboard/utils/app_style.dart';
-import 'package:responsive_dashboard/widgets/dots_indicator.dart';
-import 'package:responsive_dashboard/widgets/my_card_pade_view.dart';
+import 'package:responsive_dashboard/widgets/card/dots_indicator.dart';
+import 'package:responsive_dashboard/widgets/card/my_card_pade_view.dart';
 
 class MyCardSection extends StatefulWidget {
   const MyCardSection({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_dashboard/widgets/custom_dot.dart';
+import 'package:responsive_dashboard/widgets/card/custom_dot.dart';
 
 class DotsIndicator extends StatelessWidget {
   const DotsIndicator({super.key, required this.currentpageIndex});
